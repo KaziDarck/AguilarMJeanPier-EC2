@@ -4,7 +4,8 @@ public class ClienteRequestDTO {
 
 	private Integer idCliente;
 	private String nombreCliente;
-	private String celularCliente;
+	private String direccionCliente;
+	private String dniCliente;
 	public Integer getIdCliente() {
 		return idCliente;
 	}
@@ -17,12 +18,21 @@ public class ClienteRequestDTO {
 	public void setNombreCliente(String nombreCliente) {
 		this.nombreCliente = nombreCliente;
 	}
-	public String getCelularCliente() {
-		return celularCliente;
+	public String getDireccionCliente() {
+		return direccionCliente;
 	}
-	public void setCelularCliente(String celularCliente) {
-		this.celularCliente = celularCliente;
+	public void setDireccionCliente(String direccionCliente) {
+		this.direccionCliente = direccionCliente;
 	}
+	public String getDniCliente() {
+		return dniCliente;
+	}
+	public void setDniCliente(String dniCliente) {
+		this.dniCliente = dniCliente;
+	}
+	
+	
+
 	
 	
 }

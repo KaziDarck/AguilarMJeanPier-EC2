@@ -20,11 +20,7 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public void guardarCliente(ClienteRequestDTO p) {
 		// TODO Auto-generated method stub
-		Clients cliente = new Clients();
-		cliente.setCelular(p.getCelularCliente());
-		cliente.setCliente(p.getNombreCliente());
-		cliente.setIdCliente(p.getIdCliente());
-		repository.save(cliente);
+		
 	}
 
 	@Override
@@ -49,8 +45,7 @@ public class ClientServiceImpl implements ClientService {
 		for (Clients c : cliente) {
 			clienteDTO = new ClienteResponseDTO();
 			clienteDTO.setIdCliente(c.getIdCliente());
-			clienteDTO.setCelularCliente(c.getCelular());
-			clienteDTO.setNombreCliente(c.getCliente());
+			
 			dto.add(clienteDTO);
 		}
 		

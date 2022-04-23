@@ -19,8 +19,9 @@ public class Clients {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idCliente;
-	private String cliente;
-	private String celular;
+	private String nombre;
+	private String direccion;
+	private String dni;
 	
 	@ManyToMany(mappedBy = "clients", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<Products> products = new ArrayList<>();
@@ -36,20 +37,28 @@ public class Clients {
 		this.idCliente = idCliente;
 	}
 
-	public String getCliente() {
-		return cliente;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setCliente(String cliente) {
-		this.cliente = cliente;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public String getCelular() {
-		return celular;
+	public String getDireccion() {
+		return direccion;
 	}
 
-	public void setCelular(String celular) {
-		this.celular = celular;
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	public List<Products> getProducts() {
@@ -67,6 +76,8 @@ public class Clients {
 	public void setItems(List<Items> items) {
 		this.items = items;
 	}
+
+
 	
 	
 }

@@ -19,13 +19,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public void guardarProducto(ProductRequestDTO p) {
-		Products producto = new Products();
-		producto.setIdProducto(p.getIdRequest());
-		producto.setDescripcion(p.getDescripcionProducto());
-		producto.setNombreProducto(p.getNombreProducto());
-		producto.setPrecio(p.getPrecioProducto());
-		producto.setStock(p.getStockProducto());
-		repository.save(producto);
+		
 	}
 
 	@Override
@@ -38,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 		Products producto = new Products();
 		producto.setIdProducto(p.getIdRequest());
 		producto.setDescripcion(p.getDescripcionProducto());
-		producto.setNombreProducto(p.getNombreProducto());
+		producto.setProducto(p.getNombreProducto());
 		producto.setPrecio(p.getPrecioProducto());
 		producto.setStock(p.getStockProducto());
 		repository.saveAndFlush(producto);
@@ -56,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
 		for (Products products : producto) {
 			productoDto = new ProductResponseDTO();
 			productoDto.setIdResponse(products.getIdProducto());
-			productoDto.setNombreProducto(products.getNombreProducto());
+			productoDto.setNombreProducto(products.getProducto());
 			productoDto.setDescripcionProducto(products.getDescripcion());
 			productoDto.setPrecioProducto(products.getPrecio());
 			productoDto.setStockProducto(products.getStock());
@@ -74,7 +68,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		productoDto = new ProductResponseDTO();
 		productoDto.setIdResponse(products.getIdProducto());
-		productoDto.setNombreProducto(products.getNombreProducto());
+		productoDto.setNombreProducto(products.getProducto());
 		productoDto.setDescripcionProducto(products.getDescripcion());
 		productoDto.setPrecioProducto(products.getPrecio());
 		productoDto.setStockProducto(products.getStock());

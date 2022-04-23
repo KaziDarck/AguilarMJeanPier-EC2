@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -26,7 +27,7 @@ public class Products implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idProducto;
-	private String nombreProducto;
+	private String producto;
 	private String descripcion;
 	private Double precio;
 	private Integer stock;
@@ -39,6 +40,10 @@ public class Products implements Serializable{
 	joinColumns = @JoinColumn(name="id_producto", nullable = false, unique = true,foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (id_producto) references products (id_producto)")),
 	inverseJoinColumns =  @JoinColumn(name="id_cliente", nullable = false, unique = true,foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (id_cliente) references clients (id_cliente)"))
 	)
+	
+	
+	
+	
 	private List<Clients> clients = new ArrayList<>();
 
 	public Integer getIdProducto() {
@@ -49,12 +54,12 @@ public class Products implements Serializable{
 		this.idProducto = idProducto;
 	}
 
-	public String getNombreProducto() {
-		return nombreProducto;
+	public String getProducto() {
+		return producto;
 	}
 
-	public void setNombreProducto(String nombreProducto) {
-		this.nombreProducto = nombreProducto;
+	public void setProducto(String producto) {
+		this.producto = producto;
 	}
 
 	public String getDescripcion() {
@@ -96,6 +101,10 @@ public class Products implements Serializable{
 	public void setClients(List<Clients> clients) {
 		this.clients = clients;
 	}
+
+	
+
+	
 	
 	
 }
